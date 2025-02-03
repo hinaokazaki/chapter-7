@@ -1,0 +1,43 @@
+.detailMain {
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.detailBox {
+  padding: 1rem;
+}
+
+.detailImg {
+  height: auto;
+  max-width: 100%;
+}
+
+.detailInfo {
+  padding: 1rem;
+}
+
+.detailBoxNav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detailBoxNavDate {
+  color: #ccc;
+}
+
+.detailBoxTextsTitle {
+  font-weight: lighter;
+  font-size: 1.5rem;
+}
+
+.loadingMessage {
+  margin: 40px 0 0 0;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.errorHandring {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
