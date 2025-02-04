@@ -2,16 +2,16 @@ import React from 'react';
 import classes from '../css/Details.module.css';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { PostData } from '../types/type';
+import { Post } from '../types/type';
 import Categories from '../component/Categories';
 import Text from '../component/Text';
 
 type ApiRes = {
-  post: PostData;
+  post: Post;
 }
 
 const Details: React.FC = () => {
-  const [post, setPost] = useState<PostData | null>(null)
+  const [post, setPost] = useState<Post | null>(null)
   const [isLoading, setIsLoading] = useState(true);
 
   // URLからpostのidを取得

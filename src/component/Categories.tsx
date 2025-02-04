@@ -1,11 +1,11 @@
 import React from 'react';
 import classes from '../css/Categories.module.css'
 
-type CategoriesProps = {
+type Props = {
   categories: string[]
 };
 
-const Categories: React.FC<CategoriesProps> = ({categories}) => {
+const Categories: React.FC<Props> = ({categories}) => {
   return (
     <div>
       {categories.map((item, index) => 

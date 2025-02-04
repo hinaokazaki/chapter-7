@@ -4,14 +4,14 @@ import classes from '../css/Home.module.css';
 import { Link } from 'react-router-dom'
 import Categories from '../component/Categories';
 import Text from '../component/Text';
-import { PostData } from '../types/type';
+import { Post } from '../types/type';
 
 type ApiRes = {
-  posts: PostData[]
+  posts: Post[]
 }
 
 const Home: React.FC = () => {
-  const [posts, setPosts] = useState<PostData[] | null>(null);
+  const [posts, setPosts] = useState<Post[] | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   // APIでpostsを取得する処理をuseEffectで実行

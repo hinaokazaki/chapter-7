@@ -1,9 +1,9 @@
 import React from 'react';
 
-type TextProps = {
+type Props = {
   content: string
 }
 
-export default function Text({content}: TextProps) {
+export default function Text({content}: Props) {
   return <div dangerouslySetInnerHTML={{__html: content}}/>
 };
