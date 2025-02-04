@@ -42,28 +42,26 @@ const Details: React.FC = () => {
   if(isLoading) 
     return <div className={classes.loadingMessage}>読み込み中...</div> 
   
-  if (!isLoading && !post) 
+  if (!post) 
 		return <div className={classes.errorHandring}>記事が見つかりません。</div>
 
   return (
     <>
-      {post && (
-        <div className={classes.detailMain}>
-          <div className={classes.detailBox}>
-            <div><img className={classes.detailImg} src={post.thumbnailUrl} alt={post.title}></img></div>
-            <div className={classes.detailInfo}>
-              <div className={classes.detailBoxNav}>
-                <div className={classes.detailBoxNavDate}>{new Date(post.createdAt).toLocaleDateString()}</div> {/* newとDateで新しいDateオブジェクトを作成してそれにtoLocaleDateString()メソッドを使って日付の表示を変更した */}
-                <Categories categories={post.categories}/>
-              </div>
-              <div className={classes.homeBoxTexts}>
-                <h1 className={classes.detailBoxTextsTitle}>APIで取得した{post.title}</h1>
-                <Text content={post.content}/> 
-              </div>
+      <div className={classes.detailMain}>
+        <div className={classes.detailBox}>
+          <div><img className={classes.detailImg} src={post.thumbnailUrl} alt={post.title}></img></div>
+          <div className={classes.detailInfo}>
+            <div className={classes.detailBoxNav}>
+              <div className={classes.detailBoxNavDate}>{new Date(post.createdAt).toLocaleDateString()}</div> {/* newとDateで新しいDateオブジェクトを作成してそれにtoLocaleDateString()メソッドを使って日付の表示を変更した */}
+              <Categories categories={post.categories}/>
+            </div>
+            <div className={classes.homeBoxTexts}>
+              <h1 className={classes.detailBoxTextsTitle}>APIで取得した{post.title}</h1>
+              <Text content={post.content}/> 
             </div>
           </div>
         </div>
-      )}
+      </div>
     </>
   )
 }

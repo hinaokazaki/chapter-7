@@ -11,7 +11,7 @@ type ApiRes = {
 }
 
 const Home: React.FC = () => {
-  const [posts, setPosts] = useState<Post[] | null>(null);
+  const [posts, setPosts] = useState<Post[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   // APIでpostsを取得する処理をuseEffectで実行
@@ -46,13 +46,13 @@ const Home: React.FC = () => {
     return <div className={classes.loadingMessage}>読み込み中...</div>
 
   // ローディングが終わってpostsが空である時の表示、早期リターン
-  if(!isLoading && !posts)
+  if(posts.length === 0)
     return <div className={classes.errorHandring}>記事が見つかりません。</div>
 
   return (
     // mapの結果として配列JSX.Element[]が返るので<></>でつつんでReactElementにすることでapp.tsxで型エラーが出なくなる
     <> 
-      {posts && posts.map((elem) => ( // postsがnullでないことを示すためにposts &&とした。
+      {posts.map((elem) => ( 
         <React.Fragment key={elem.id}>
           <div className={classes.homeMain}>
             <div className={classes.homeBoxes}>

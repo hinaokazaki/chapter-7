@@ -4,6 +4,8 @@ type Props = {
   content: string
 }
 
-export default function Text({content}: Props) {
+const Text: React.FC<Props> = ({content}) => {
   return <div dangerouslySetInnerHTML={{__html: content}}/>
 };
+
+export default Text;
